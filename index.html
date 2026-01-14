@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>우리집 고앵들</title>
+    <style>
+        body { font-family: 'Nanum Gothic', sans-serif; line-height: 1.6; }
+        h1, .intro { text-align: center; margin-top: 50px; }
+        .project-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+        .card { text-align: center; border: 1px solid #ddd; padding: 15px; border-radius: 10px; }
+        .card_img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+        .card_title { font-size: 22px; font-weight: bold; margin: 15px 0; }
+        .card_button {
+            background-color: #333; color: white; padding: 10px 20px;
+            text-decoration: none; border-radius: 5px; display: inline-block;
+        }
+        .card_button:hover { background-color: #555; }
+    </style>
+</head>
+<body>
+    <h1>🐈 우리집 고양들을 소개합니다</h1>
+    <p class="intro">저와 함께 살고 있는 사랑스러운 세 마리 고양이에요.</p>
 
-    </body>
+    <div class="project-container">
+        <div class="card" >
+            <img class="card_img" style="margin-top: 30px;" src="./img/navi_main.png">
+            <p class="card_title">나비</p>
+            <a href="cat1.html" class="card_button">자세히 보기</a>
+        </div>
+        <div class="card">
+            <img class="card_img" src="./img/cheese_main.png">
+            <p class="card_title">치즈</p>
+            <a href="cat2.html" class="card_button">자세히 보기</a>
+        </div>
+        <div class="card">
+            <img class="card_img" src="./img/kong_main.png">
+            <p class="card_title">콩이</p>
+            <a href="cat3.html" class="card_button">자세히 보기</a>
+        </div>
+    </div>
+</body>
 </html>

@@ -53,6 +53,7 @@
         .card { text-align: center; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); }
         .card_img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
+        .card_img404 { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; margin-bottom: 50px;}
         .card_title { font-size: 20px; font-weight: bold; margin: 15px 0; }
         .card_button {
             background-color: #000; color: white; padding: 10px 25px;
@@ -62,6 +63,31 @@
 
         .tag span {
             color: steelblue;
+        }
+        /* 사진과 글자를 감싸는 컨테이너 */
+        .img-container {
+            position: relative; /* 자식 요소인 overlay의 기준점이 됩니다 */
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden; /* 영역 밖으로 나가는 이미지를 잘라냅니다 */
+        }
+
+/* 반투명한 유리창 효과 */
+        .overlay {
+            position: absolute; /* 사진 위에 공중 부양 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 검정색 50% 반투명 유리창 */
+            color: white;
+            display: flex;
+            align-items: center; /* 세로 중앙 정렬 */
+            justify-content: center; /* 가로 중앙 정렬 */
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px; /* 글자 간격 살짝 벌림 */
         }
     </style>
 </head>
@@ -90,12 +116,16 @@
             <a href="https://chocofanta01.github.io/Mycat/" class="card_button">자세히 보러가기</a>
         </div>
 
-        <div class="card" style="opacity: 0.5;">
-            <div class="card_img" style="background: #f9f9f9; display: flex; align-items: center; justify-content: center; font-weight: bold;">Coming Soon</div>
-            <p class="card_title">다음 프로젝트 준비 중</p>
-            <a href="#" class="card_button">준비 중</a>
-        </div>
+        <div class="card">
+    <div class="img-container">
+        <img class="card_img404" src="./img/404.png" style="margin:0; height:100%;">
+        
+        <div class="overlay">Coming Soon</div>
     </div>
+    
+    <p class="card_title">다음 프로젝트 준비 중</p>
+    <a href="#" class="card_button">준비 중</a>
+</div>
 
 </body>
 </html>

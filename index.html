@@ -4,59 +4,96 @@
     <meta charset="UTF-8">
     <title>예비 개발자 이재혁의 포트폴리오</title>
     <style>
-        body { font-family: 'Nanum Gothic', sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: 'Nanum Gothic', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fff; }
         
-        header { text-align: center; padding: 60px 20px; background-color: #fcfcfc; border-bottom: 1px solid #eee; }
-        header h1 { font-size: 32px; margin-bottom: 10px; }
-        header p { color: #666; font-size: 18px; }
+        /* 프로필 */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            gap: 50px; 
+        }
+        /* 프사*/
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #eee;
+            object-position: center 10%;
+        }
 
-        .section-title { text-align: center; margin-top: 60px; font-size: 28px; }
-        .intro { text-align: center; color: #777; margin-bottom: 40px; }
+        .profile-text { text-align: left; }
+        .profile-text h1 { font-size: 32px; margin: 0 0 15px 0; }
+        .profile-text p { margin: 5px 0; font-size: 17px; color: #555; }
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .section-title { text-align: center; margin-top: 60px; font-size: 26px; }
 
         .project-container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto 100px auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto 100px auto;
+            padding: 0 20px;
         }
-        .card { text-align: center; border: 1px solid #ddd; padding: 15px; border-radius: 10px; background: white; transition: 0.3s; }
-        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        
-        .card_img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
-        .card_title { font-size: 22px; font-weight: bold; margin: 15px 0; }
+
+        .card { text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card_img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }
+        .card_title { font-size: 20px; font-weight: bold; margin: 15px 0; }
         .card_button {
-            background-color: #333; color: white; padding: 10px 20px;
-            text-decoration: none; border-radius: 5px; display: inline-block;
+            background-color: #000; color: white; padding: 10px 25px;
+            text-decoration: none; border-radius: 25px; display: inline-block;
+            font-size: 14px;
         }
-        .card_button:hover { background-color: #555; }
+
+        .tag span {
+            color: steelblue;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>안녕하세요, 예비 개발자 이재혁 입니다. </h1>
-        <p>HTML, CSS, Git을 공부하며 만든 저의 첫 번째 프로젝트 페이지입니다.</p>
-    </header>
+    <section class="profile-section">
+        <img src="./img/my_photo.jpg" class="profile-img">
+        
+        <div class="profile-text">
+            <h1>이재혁 (Lee Jae-hyuk)</h1>
+            <p>🎂 2001.01.10 (만 25세)</p>
+            <p>🎓 정보통신공학과 졸업</p>
+            <p>📜 정보처리기사 자격증 보유</p>
+            <div class="tag"><span>#</span>신입개발자 <span>#</span>HTML/CSS <span>#</span>Git <br> <span>#</span>C++ <span>#</span>Python</div>
+        </div>
+    </section>
 
-    <h2 class="section-title">🐈 Project : 우리집 고양들 소개 사이트</h2>
-    <p class="intro"> CSS/HTML 레이아웃과 상세 페이지 연결을 구현한 첫번째 개인 프로젝트입니다.</p>
+    <hr style="border: 0; border-top: 1px solid #eee; max-width: 1000px;">
 
+    <h2 class="section-title">My Projects</h2>
+    
     <div class="project-container">
         <div class="card">
-            <img class="card_img" style="margin-top: 40px;" src="./img/navi_main.png">
-            <p class="card_title">나비</p>
-            <a href="navi.html" class="card_button">자세히 보기</a>
+            <img class="card_img" src="./img/cat_project_thumb.png" alt="고양이 프로젝트">
+            <p class="card_title">우리집 고양이 소개 사이트</p>
+            <a href="https://chocofanta01.github.io/Mycat/" class="card_button">자세히 보러가기</a>
         </div>
-        <div class="card">
-            <img class="card_img" style="margin-bottom: 40px;" src="./img/cheese_main.png">
-            <p class="card_title">치즈</p>
-            <a href="cheese.html" class="card_button">자세히 보기</a>
-        </div>
-        <div class="card">
-            <img class="card_img" style="margin-top: 10px;" src="./img/kong_main.png">
-            <p class="card_title">콩이</p>
-            <a href="kong.html" class="card_button" style="margin-top: 30px" >자세히 보기</a>
+
+        <div class="card" style="opacity: 0.5;">
+            <div class="card_img" style="background: #f9f9f9; display: flex; align-items: center; justify-content: center; font-weight: bold;">Coming Soon</div>
+            <p class="card_title">다음 프로젝트 준비 중</p>
+            <a href="#" class="card_button">준비 중</a>
         </div>
     </div>
 
